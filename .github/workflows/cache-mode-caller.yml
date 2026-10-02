@@ -1,0 +1,14 @@
+name: Temporary cache mode caller canary
+on:
+  issue_comment:
+    types: [created]
+cache-mode: read
+permissions:
+  actions: read
+  contents: read
+jobs:
+  call-reusable:
+    uses: ./.github/workflows/cache-mode-reusable.yml
+    cache-mode: read
+    with:
+      cache_key: codex-cache-canary-${{ github.event.comment.id }}
