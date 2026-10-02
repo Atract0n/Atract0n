@@ -1,0 +1,42 @@
+name: Temporary cache-mode enforcement canary
+on:
+  workflow_dispatch:
+
+cache-mode: read
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  cache-mode-probe:
+    runs-on: ubuntu-latest
+    cache-mode: read
+    steps:
+      - name: Create harmless marker
+        run: printf 'synthetic-cache-mode-canary\n' > marker.txt
+
+      - name: Attempt cache save with a forged local mode hint
+        uses: actions/cache/save@v4
+        env:
+          ACTIONS_CACHE_MODE: write
+        with:
+          path: marker.txt
+          key: codex-cache-mode-probe-${{ github.run_id }}
+
+      - name: Try to read the probe key
+        id: restore
+        uses: actions/cache/restore@v4
+        with:
+          path: marker.txt
+          key: codex-cache-mode-probe-${{ github.run_id }}
+
+      - name: Record only the result
+        env:
+          CACHE_HIT: ${{ steps.restore.outputs.cache-hit }}
+        run: |
+          if [ "$CACHE_HIT" = "true" ]; then
+            echo "cache_probe=WRITE_BYPASS_CONFIRMED"
+            cat marker.txt
+          else
+            echo "cache_probe=write_denied_as_expected"
+          fi
