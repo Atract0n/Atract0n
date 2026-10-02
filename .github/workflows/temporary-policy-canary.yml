@@ -1,0 +1,12 @@
+name: Temporary workflow event policy canary
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions: {}
+jobs:
+  canary:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Record harmless test marker
+        run: echo "Temporary policy canary executed" >> "$GITHUB_STEP_SUMMARY"
