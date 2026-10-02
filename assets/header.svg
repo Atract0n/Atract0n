@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="300" viewBox="0 0 1000 300">
+<rect width="1000" height="300" fill="#050505"/>
+<g fill="none" stroke="#eee" stroke-width="1" opacity=".25"><circle cx="500" cy="135" r="86"/><circle cx="500" cy="135" r="58"/><path d="M80 135H920"/></g>
+<g fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">
+<path d="M500 135 C410 30 300 90 365 160 C420 220 490 165 500 135 C510 105 580 50 635 110 C700 180 590 240 500 135" stroke-dasharray="12 10">
+<animate attributeName="stroke-dashoffset" values="0;-220" dur="6s" repeatCount="indefinite"/></path>
+</g>
+<circle cx="500" cy="135" r="5" fill="#fff"><animate attributeName="opacity" values=".25;1;.25" dur="2s" repeatCount="indefinite"/></circle>
+<text x="500" y="252" text-anchor="middle" fill="#fff" font-family="monospace" font-size="38" letter-spacing="13">ATRACTØN</text>
+<text x="500" y="280" text-anchor="middle" fill="#888" font-family="monospace" font-size="12" letter-spacing="4">OFFENSIVE SECURITY · RESEARCH · ENGINEERING</text>
+</svg>

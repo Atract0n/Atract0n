@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="220" viewBox="0 0 1000 220">
+<rect width="1000" height="220" fill="#050505"/>
+<g transform="translate(500 105)" fill="none" stroke="#f2f2f2" stroke-width="1.4" opacity=".9">
+<path d="M0 0 C-50-80-180-100-220-25 C-250 40-160 105-70 55 C-25 30-5 8 0 0 C5-8 25-30 70-55 C160-105 250-40 220 25 C180 100 50 80 0 0" stroke-dasharray="8 8">
+<animate attributeName="stroke-dashoffset" values="0;-160" dur="4s" repeatCount="indefinite"/></path>
+</g>
+<g fill="#fff"><circle r="3"><animateMotion dur="5s" repeatCount="indefinite" path="M500 105 C450 25 320 5 280 80 C250 145 340 210 430 160 C475 135 495 113 500 105 C505 97 525 75 570 50 C660 0 750 65 720 130 C680 205 550 185 500 105"/></circle></g>
+<text x="500" y="205" text-anchor="middle" fill="#777" font-family="monospace" font-size="12" letter-spacing="3">DETERMINISTIC ≠ PREDICTABLE</text>
+</svg>
