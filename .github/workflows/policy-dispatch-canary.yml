@@ -1,0 +1,10 @@
+name: Temporary policy dispatch source canary
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "dispatch_source_completed"
