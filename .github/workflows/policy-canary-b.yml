@@ -1,0 +1,12 @@
+name: Policy Canary B
+on:
+  workflow_run:
+    workflows: ["Policy Canary A"]
+    types: [completed]
+permissions: {}
+jobs:
+  marker:
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - run: echo 'workflow_run canary completed' >> "$GITHUB_STEP_SUMMARY"
