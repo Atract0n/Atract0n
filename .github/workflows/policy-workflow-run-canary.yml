@@ -1,0 +1,12 @@
+name: Temporary workflow_run policy target canary
+on:
+  workflow_run:
+    workflows: ["Temporary policy dispatch source canary"]
+    types: [completed]
+permissions:
+  contents: read
+jobs:
+  target:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "workflow_run_target_executed"
