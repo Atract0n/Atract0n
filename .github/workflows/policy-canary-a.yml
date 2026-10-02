@@ -1,0 +1,10 @@
+name: Policy Canary A
+on:
+  workflow_dispatch:
+permissions: {}
+jobs:
+  marker:
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - run: echo 'manual canary completed' >> "$GITHUB_STEP_SUMMARY"
